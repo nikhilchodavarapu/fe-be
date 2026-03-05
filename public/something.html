@@ -120,6 +120,59 @@
       padding: 0 0.5em;
       font-size: 12px;
     }
+
+    .addPost {
+      position: absolute;
+      top: 35%;
+      left: 39%;
+      width: 20%;
+      border-radius: 5px;
+      background: rgba(47, 79, 79, 0.708);
+      box-shadow: 2px 2px 4px black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
+    }
+
+    h4 {
+      margin: 1em 0;
+    }
+
+    input,
+    textarea {
+      height: 30px;
+      border-radius: 5px;
+      padding: 1em;
+      border: 1px solid grey;
+      outline-color: darkslategrey;
+      width: 95%;
+    }
+
+    .button {
+      width: 95%;
+      padding: 0.5em;
+      margin: 2em 0.3em 0 0.3em;
+      border-radius: 20px;
+      cursor: pointer;
+      color: aliceblue;
+      background: darkcyan;
+      align-items: center;
+    }
+
+    .button:hover {
+      background: rgba(0, 139, 139, 0.737);
+    }
+
+    .popup-bg {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(4px);
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
   </style>
 </head>
 
@@ -191,6 +244,22 @@
         <img src="assets/search.svg" alt="search" class="icon">
         <img src="assets/profile.svg" alt="profile" class="icon">
       </footer>
+    </div>
+
+    <div class="popup-bg"></div>
+
+    <div class="addPost">
+      <form action="/addPost" method="post" enctype="multipart/form-data">
+        <div>
+          <h4>Post</h4>
+          <input type="file" name="post-image" id="profile-image">
+        </div>
+        <div>
+          <h4>Add caption</h4>
+          <textarea name="comment" id="comment"></textarea>
+        </div>
+        <button type="submit" class="button">Submit</button>
+      </form>
     </div>
   </main>
 </body>
